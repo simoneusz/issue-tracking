@@ -25,7 +25,7 @@ RSpec.describe ProjectsController, type: :controller do
       end
 
       it 'assigns @projects' do
-        expect(assigns(:projects)).to eq(Project.all)
+        expect(assigns(:projects)).to eq(Project.by_user(user))
       end
     end
   end
