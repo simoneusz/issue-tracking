@@ -6,10 +6,6 @@ class IssuesController < ApplicationController
   before_action :set_issue, only: %i[show edit update destroy]
   before_action :authorize_user!, only: %i[edit update destroy]
 
-  def index
-    @issues = @project.issues
-  end
-
   def show
     @comments = @issue.comments
   end
