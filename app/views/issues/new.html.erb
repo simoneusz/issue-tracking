@@ -25,13 +25,13 @@
 
       <div class="d-flex justify-content-between">
         <div>
-          <%= link_to "Cancel", project_path(@project), class: "btn btn-secondary" %>
-          <%= f.submit "Save", class: "btn btn-primary" %>
+          <%= link_to 'Cancel', project_path(@project), class: 'btn btn-secondary' %>
+          <%= f.submit 'Save', class: 'btn btn-primary' %>
         </div>
 
         <% if !@issue.new_record? && @issue.user == current_user %>
-          <%= button_to "Delete Issue", project_issue_path(@project, @issue), method: :delete,
-                        data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+          <%= button_to 'Delete Issue', project_issue_path(@project, @issue), method: :delete,
+                        data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
         <% end %>
       </div>
     <% end %>

@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-between align-items-center mb-3">
   <h1>Projects</h1>
-  <%= link_to "New Project", new_project_path, class: "btn btn-primary" %>
+  <%= link_to 'New Project', new_project_path, class: 'btn btn-primary' %>
 </div>
 
 <table class="table">
@@ -20,8 +20,8 @@
         <td><%= truncate(project.description, length: 100) %></td>
         <td>
           <% if project.user == current_user %>
-            <%= link_to "Edit", edit_project_path(project), class: "btn btn-sm btn-secondary" %>
-            <%= button_to "Delete", project, method: :delete, class: "btn btn-sm btn-danger", data: { confirm: "Are you sure?" } %>
+            <%= link_to 'Edit', edit_project_path(project), class: 'btn btn-sm btn-secondary' %>
+            <%= button_to 'Delete', project, method: :delete, class: 'btn btn-sm btn-danger', data: { confirm: 'Are you sure?' } %>
           <% end %>
         </td>
       </tr>

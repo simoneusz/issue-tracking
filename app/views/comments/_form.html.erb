@@ -1,7 +1,7 @@
 <%= form_with model: [issue.project, issue, Comment.new], local: true, class: "card p-3 mt-3" do |f| %>
   <div class="mb-3">
-    <%= f.label :body, "Comment here", class: "form-label" %>
-    <%= f.text_area :body, rows: 3, class: "form-control" %>
+    <%= f.label :body, 'Comment here', class: 'form-label' %>
+    <%= f.text_area :body, rows: 3, class: 'form-control' %>
   </div>
-  <%= f.submit "Post Comment", class: "btn btn-primary" %>
+  <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
 <% end %>

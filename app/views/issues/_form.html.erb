@@ -11,13 +11,13 @@
 
   <div class="mb-3">
     <%= f.label :status, "Status" %>
-    <%= f.select :status, ["Active", "On hold", "Resolved", "Closed"], {}, class: "form-select" %>
+    <%= f.select :status, ['Active', 'On hold', 'Resolved', 'Closed'], {}, class: 'form-select' %>
   </div>
 
 
 
   <div class="d-flex justify-content-between">
-    <%= f.submit class: "btn btn-primary" %>
-    <%= link_to "Cancel", project_path(@project), class: "btn btn-secondary" %>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', project_path(@project), class: 'btn btn-secondary' %>
   </div>
 <% end %>

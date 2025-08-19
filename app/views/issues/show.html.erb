@@ -34,12 +34,12 @@
 </div>
 
 <div class="mb-4">
-  <p><strong>Issue number:</strong> <%= @issue.id || "New" %></p>
+  <p><strong>Issue number:</strong> <%= @issue.id || 'New' %></p>
   <p><strong>Assigned to:</strong> <%= @issue.assignee&.email if @issue.user %></p>
-  <p><strong>Creation date:</strong> <%= @issue.created_at&.strftime("%Y-%m-%d") %></p>
+  <p><strong>Creation date:</strong> <%= @issue.created_at&.strftime('%Y-%m-%d') %></p>
 </div>
 
 <h3>Comments</h3>
 <%= render @issue.comments %>
 
-<%= render "comments/form", issue: @issue %>
+<%= render 'comments/form', issue: @issue %>
