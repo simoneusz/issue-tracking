@@ -1,24 +1,59 @@
-# README
+# Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby: 3.4.2
+- Rails: 8.x
+- PostgreSQL: latest stable
+- Node.js & Yarn: for assets compilation
 
-Things you may want to cover:
+# Installation guide
 
-* Ruby version
+clone the repo:
+```
+git clone git@github.com:simoneusz/issue-tracking.git
+cd issue-tracking
+```
+bundle install:
+```
+bundle install
+```
+copy env vars:
+```
+cp example.env .env
+```
+db setup:
+```
+rails db:create
+rails db:migrate
+rails db:seed
+```
+run the server:
+```
+rails server
+```
 
-* System dependencies
+# Project gallery: 
 
-* Configuration
+## Projects intex page
+![alt text](https://github.com/simoneusz/issue-tracking/blob/main/git-images/3.png?raw=true)
 
-* Database creation
+## Project show page
+![alt text](https://github.com/simoneusz/issue-tracking/blob/main/git-images/4.png?raw=true)
 
-* Database initialization
+## Project create
+![alt text](https://raw.githubusercontent.com/simoneusz/issue-tracking/refs/heads/main/git-images/6.png)
 
-* How to run the test suite
+## Issue show
+![alt text](https://raw.githubusercontent.com/simoneusz/issue-tracking/refs/heads/main/git-images/5.png)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Issue new
+![alt text](https://raw.githubusercontent.com/simoneusz/issue-tracking/refs/heads/main/git-images/7.png)
 
-* Deployment instructions
+## Tests, Lint
+run the specs:
+```
+bundle exec rspec
+```
+![alt text](https://github.com/simoneusz/issue-tracking/blob/main/git-images/2.png?raw=true)
 
-* ...
+Rubocop:
+![alt text](https://github.com/simoneusz/issue-tracking/blob/main/git-images/1.png?raw=true)
