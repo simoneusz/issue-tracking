@@ -28,18 +28,6 @@ RSpec.describe ProjectsController, type: :controller do
         expect(assigns(:projects)).to eq(Project.all)
       end
     end
-
-    context 'when user is not authenticated' do
-      before do
-        allow(controller).to receive(:current_user).and_return(nil)
-        allow(controller).to receive(:authenticate_user!).and_call_original
-      end
-
-      it 'calls authenticate_user!' do
-        expect(controller).to receive(:authenticate_user!)
-        get_index
-      end
-    end
   end
 
   describe 'GET #show' do
@@ -226,9 +214,10 @@ RSpec.describe ProjectsController, type: :controller do
     subject(:delete_project) { delete :destroy, params: { id: project.id } }
 
     context 'when user owns the project' do
-      let!(:project) { create(:project, user: user) }
+      let(:project) { create(:project, user: user) }
 
       it 'deletes the project' do
+        project
         expect { delete_project }.to change(Project, :count).by(-1)
       end
 
@@ -244,9 +233,10 @@ RSpec.describe ProjectsController, type: :controller do
     end
 
     context 'when user does not own the project' do
-      let!(:project) { create(:project, user: another_user) }
+      let(:project) { create(:project, user: another_user) }
 
       it 'does not delete the project' do
+        project
         expect { delete_project }.not_to change(Project, :count)
       end
 

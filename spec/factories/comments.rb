@@ -3,7 +3,7 @@
 FactoryBot.define do
   factory :comment do
     body { 'This is a sample comment for testing purposes' }
-    association :issue
-    association :user
+    issue
+    user
   end
 end

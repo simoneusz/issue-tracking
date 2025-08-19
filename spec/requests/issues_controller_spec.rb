@@ -229,9 +229,10 @@ RSpec.describe IssuesController, type: :controller do
     subject(:delete_issue) { delete :destroy, params: { project_id: project.id, id: issue.id } }
 
     context 'when user owns the issue' do
-      let!(:issue) { create(:issue, project: project, user: user) }
+      let(:issue) { create(:issue, project: project, user: user) }
 
       it 'deletes the issue' do
+        issue
         expect { delete_issue }.to change(Issue, :count).by(-1)
       end
 
@@ -247,9 +248,10 @@ RSpec.describe IssuesController, type: :controller do
     end
 
     context 'when user does not own the issue' do
-      let!(:issue) { create(:issue, project: project, user: another_user) }
+      let(:issue) { create(:issue, project: project, user: another_user) }
 
       it 'does not delete the issue' do
+        issue
         expect { delete_issue }.not_to change(Issue, :count)
       end
 

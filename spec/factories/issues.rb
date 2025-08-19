@@ -5,8 +5,8 @@ FactoryBot.define do
     sequence(:title) { |n| "Issue #{n}" }
     description { 'A sample issue description for testing' }
     status { 'open' }
-    association :project
-    association :user
-    association :assignee, factory: :user
+    project
+    user
+    assignee factory: %i[user]
   end
 end

@@ -4,6 +4,6 @@ FactoryBot.define do
   factory :project do
     sequence(:name) { |n| "Project #{n}" }
     description { 'A sample project for testing purposes' }
-    association :user
+    user
   end
 end
