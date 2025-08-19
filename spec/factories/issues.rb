@@ -1,9 +1,12 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :issue do
-    title { "MyString" }
-    description { "MyText" }
-    status { "MyString" }
-    project { nil }
-    user { nil }
+    sequence(:title) { |n| "Issue #{n}" }
+    description { 'A sample issue description for testing' }
+    status { 'open' }
+    association :project
+    association :user
+    association :assignee, factory: :user
   end
 end

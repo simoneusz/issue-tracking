@@ -3,7 +3,7 @@
 class Issue < ApplicationRecord
   belongs_to :project
   belongs_to :user
-  belongs_to :assignee, class_name: 'User', optional: true
+  belongs_to :assignee, class_name: 'User'
 
   has_many :comments, dependent: :destroy
 

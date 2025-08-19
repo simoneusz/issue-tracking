@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :comment do
-    body { "MyText" }
-    issue { nil }
-    user { nil }
+    body { 'This is a sample comment for testing purposes' }
+    association :issue
+    association :user
   end
 end
