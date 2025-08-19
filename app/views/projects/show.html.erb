@@ -1,0 +1,40 @@
+<h1><%= @project.name %></h1>
+
+<div class="mb-3">
+  <%= link_to "Create a new issue", new_project_issue_path(@project), class: "btn btn-primary" %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>No</th>
+    <th>Title</th>
+    <th>Date created</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @project.issues.each_with_index do |issue, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= link_to issue.title, project_issue_path(@project, issue) %></td>
+      <td><%= issue.created_at.strftime("%Y-%m-%d") %></td>
+      <td><%= issue.assignee&.email || "Unassigned" %></td>
+      <td>
+          <span class="badge <%= status_class(issue.status) %>">
+            <%= issue.status %>
+          </span>
+      </td>
+      <td>
+        <% if issue.user == current_user %>
+          <%= link_to "Edit", edit_project_issue_path(@project, issue), class: "btn btn-sm btn-secondary" %>
+          <%= button_to "Delete", project_issue_path(@project, issue), method: :delete,
+                        data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

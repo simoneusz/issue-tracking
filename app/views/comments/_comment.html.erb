@@ -1,0 +1,12 @@
+<div class="card mb-2">
+  <div class="card-body">
+    <p><%= comment.body %></p>
+    <small class="text-muted">
+      <%= comment.user.name %> • <%= comment.created_at.strftime("%Y-%m-%d %H:%M") %>
+    </small>
+    <% if comment.user == current_user %>
+      <%= button_to "Delete", project_issue_comment_path(@issue.project, @issue, comment),
+                    method: :delete, class: "btn btn-sm btn-outline-danger float-end", data: { confirm: "Delete comment?" } %>
+    <% end %>
+  </div>
+</div>
