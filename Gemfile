@@ -22,6 +22,7 @@ group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'dotenv-rails'
+  gem 'faker'
   gem 'rubocop', require: false
   gem 'rubocop-erb', '~> 0.5.5', require: false
   gem 'rubocop-factory_bot', '~> 2.27', require: false
@@ -36,7 +37,6 @@ end
 group :test do
   gem 'capybara'
   gem 'factory_bot_rails'
-  gem 'faker'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
 end
