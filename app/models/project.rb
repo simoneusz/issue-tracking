@@ -8,4 +8,11 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
   validates :description, presence: true
+
+  # either project.user == user or issue.assignee == user
+  scope :by_user, lambda { |user|
+    left_joins(:issues)
+      .where("projects.user_id = :user_id OR issues.assignee_id = :user_id", user_id: user.id)
+      .distinct
+  }
 end
