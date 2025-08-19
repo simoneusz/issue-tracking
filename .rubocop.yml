@@ -1,7 +1,8 @@
+require:
+  - rubocop-erb
 plugins:
   - rubocop-rspec
   - rubocop-rails
-  - rubocop-erb
   - rubocop-factory_bot
 AllCops:
   NewCops: enable
@@ -10,3 +11,5 @@ AllCops:
     - 'bin/setup'
     - 'config/**/*'
     - 'db/**/*'
+Style/Documentation:
+  Enabled: false

@@ -14,19 +14,19 @@ gem 'turbo-rails'
 # gem "redis", ">= 4.0.1"
 # gem "bcrypt", "~> 3.1.7"
 
-gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'tzinfo-data', platforms: %i[windows jruby]
 
 group :development, :test do
   gem 'brakeman', require: false
   gem 'debug', platforms: %i[mri windows], require: 'debug/prelude'
   gem 'dotenv-rails'
   gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
   gem 'rubocop-erb', '~> 0.5.5', require: false
   gem 'rubocop-factory_bot', '~> 2.27', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
