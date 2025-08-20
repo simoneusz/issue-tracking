@@ -13,18 +13,20 @@
   </tr>
   </thead>
   <tbody>
-  <% @projects.each do |project| %>
-    <tr>
-      <td><%= link_to project.name, project_path(project) %></td>
-      <td><%= project.created_at.strftime("%Y-%m-%d") %></td>
-      <td>
-        <% if project.user == current_user %>
-          <%= link_to "Edit", edit_project_path(project), class: "btn btn-sm btn-secondary me-1" %>
-          <%= button_to "Delete", project_path(project), method: :delete,
-                        data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
-        <% end %>
-      </td>
-    </tr>
+  <% if current_user %>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= link_to project.name, project_path(project) %></td>
+        <td><%= project.created_at.strftime("%Y-%m-%d") %></td>
+        <td>
+          <% if project.user == current_user %>
+            <%= link_to "Edit", edit_project_path(project), class: "btn btn-sm btn-secondary me-1" %>
+            <%= button_to "Delete", project_path(project), method: :delete,
+                          data: { confirm: "Are you sure?" }, class: "btn btn-sm btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
   <% end %>
   </tbody>
 </table>
