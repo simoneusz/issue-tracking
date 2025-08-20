@@ -6,11 +6,11 @@ class ProjectsController < ApplicationController
   before_action :authorize_user!, only: %i[edit update destroy]
 
   def index
-    @project = if current_user
-                 Project.by_user(current_user)
-               else
-                 Project.all
-               end
+    @projects = if current_user
+                  Project.by_user(current_user)
+                else
+                  Project.all
+                end
   end
 
   def show
