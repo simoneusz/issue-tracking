@@ -24,7 +24,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'faker'
   gem 'rubocop', require: false
-  gem 'rubocop-erb', '~> 0.5.5', require: false
+  gem 'rubocop-erb', '~> 0.7.0', require: false
   gem 'rubocop-factory_bot', '~> 2.27', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
